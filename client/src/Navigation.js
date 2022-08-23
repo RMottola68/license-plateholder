@@ -35,7 +35,7 @@ function Navigation() {
             <Row className="p-0 m-0" style={{borderBottom:"solid black 2px",background:"rgb(255,0,0)", width: "100%"}}>
                 <Nav 
                 
-                activeKey="/home"
+                activeKey="/users"
                 onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                 >
                     <Col>
@@ -49,7 +49,7 @@ function Navigation() {
                             <h2 className="pt-5 d-flex justify-content-center">License Plateholder</h2>
                             <div className="d-flex justify-content-center">
                                 <Button className="m-3" >
-                                    <Link className="text-decoration-none  text-white" to="/search">Search Plates</Link>
+                                    <Link className="text-decoration-none  text-white" to="/users">Search Plates</Link>
                                 </Button>
                             
                                 <Button className="m-3" >
