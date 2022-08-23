@@ -9,6 +9,7 @@ import {
 import Navigation from "./Navigation";
 import UserContainer from "./UserContainer"
 import './App.css';
+import ReviewContainer from "./ReviewContainer";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Navigate to="/users" replace/>} />
         <Route path="users" element={<UserContainer />} />
-        <Route path="reviews" element={<h1>Review Form Here</h1>} />
+        <Route path="reviews" element={<ReviewContainer />} />
       </Routes>
     </div>
   );
