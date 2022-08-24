@@ -48,11 +48,11 @@ function Navigation() {
                         <Nav.Item className="">
                             <h2 className="pt-5 d-flex justify-content-center">License Plateholder</h2>
                             <div className="d-flex justify-content-center">
-                                <Button className="m-3" >
+                                <Button className="m-3 btn-success" >
                                     <Link className="text-decoration-none  text-white" to="/users">Search Plates</Link>
                                 </Button>
                             
-                                <Button className="m-3" >
+                                <Button className="m-3 btn-success" >
                                     <Link  className="text-decoration-none  text-white" to="/reviews">Review a Plate</Link>
                                 </Button>
 
