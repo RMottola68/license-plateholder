@@ -1,12 +1,12 @@
 // import { render } from '@testing-library/react';
 import { useState, useEffect } from 'react';
 import User from "./User";
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function UserContainer({ }) {
 
     const [users, setUsers] = useState([]);
-    const [value, setValue] = useState(' ')
+    const [userSearch, setUserSearch] = useState('')
 
     useEffect(()=>{
         fetch('/users')
@@ -15,28 +15,43 @@ function UserContainer({ }) {
       },[])
     // console.log(order);
 
-    const renderUsers = users.map((user) => {
-        return(
-            <User className="m-5" user={user} key={user.id} />
-        ) 
+    // const renderUsers = users.map((user) => {
+    //     return(
+    //         <User className="m-5" user={user} key={user.id} />
+    //     ) 
         
-    })
-    const onChange = (event) => {
-        setValue(event.target.value)
-    }
+    // })
+  
 
+    const search = users.filter((user)=>  {
+        let userSearchCase = userSearch.toLowerCase()
+        return (
+            user.plate.toLowerCase().includes(userSearchCase)
+    )})
+
+    
    
 
 return(
     <div className="bg-light border border-5 border-dark justify-contents-center" style={{marginTop: "174px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px"}}>
-        <Container>
-            <div>
-                <input type="text" placeholder="Search Plates" value={value} onChange={onChange}/>
-                <button class="btn btn-outline-secondary" type="button">Drive By</button>
-            </div>
+        <Container>      
             
-            <Row>
-                 {renderUsers} 
+            <Row >
+                <div>
+                    <input type="text" placeholder="Search Plates" className="search" value={userSearch} onChange={(event) => setUserSearch(prevState => prevState = event.target.value)}
+ />
+                    <button class="btn btn-outline-secondary" type="button">Drive By</button>
+                </div>
+                    {search.map((user) => {return( 
+                        
+                        <Col  xs={3} className="text-dark " key={user.id}>
+
+                             <User className="m-5" user={user} key={user.id} />
+                             
+                        </Col>
+                                )})} 
+                                
+                 
             </Row>
         </Container>
         
