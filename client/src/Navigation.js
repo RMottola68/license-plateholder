@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
 
-import { Container, Row, Col, Form, Button, Navbar } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Navbar} from 'react-bootstrap';
 
 
 function Navigation() {

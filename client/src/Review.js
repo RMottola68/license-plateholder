@@ -1,11 +1,14 @@
 function Review({ review }){
     return(
+        <span class="border border-success">
         <div className="m-5">
-            <div style={{fontSize: "25px"}}>{review.title}</div>
-            <div style={{fontSize: "30px"}}>Rating: {review.rating}</div>
-            <div style={{fontSize: "30px"}}>{review.content}</div>
+            <h1 style={{fontSize: "30px"}}><u>{review.title}</u></h1>
+            <h2 style={{fontSize: "25px"}}>Rating: {review.rating}</h2>
+            <h4 style={{fontSize: "20px"}}>{review.content}</h4>
             <div style={{fontSize: "30px"}}>Likes: {review.likes}</div>
+            
         </div>
+        </span>
     )
 }
 
