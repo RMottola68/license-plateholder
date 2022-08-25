@@ -35,7 +35,7 @@ function UserContainer({ }) {
    
 
 return(
-    <div className="bg-light border border-5 border-dark justify-contents-center" style={{marginTop: "174px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px"}}>
+    <div className="bg-light border border-5 border-dark justify-contents-center" style={{marginTop: "174px", marginRight: "175px", marginLeft: "175px", borderRadius: "30px"}}>
         <Container>      
             
             <Row >
@@ -48,7 +48,7 @@ return(
                         
                             <Col  xs={3} className="text-dark " key={user.id}>
 
-                                <User className="m-5" user={user} key={user.id} />
+                                <User className="m-5 align-items-center" user={user} key={user.id} />
                                 
                             </Col>
                         )
