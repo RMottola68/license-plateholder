@@ -28,7 +28,7 @@ function App() {
   }, []);
 
 if(!user) return <Login setUser={setUser} />
-
+console.log(user)
   return (
     <div className="App">
       <Navigation  user={user} setUser={setUser} />
@@ -36,9 +36,8 @@ if(!user) return <Login setUser={setUser} />
         <Route path="*" element={<Navigate to="/login" replace/>} />
         <Route path="users" element={<UserContainer />} />
         <Route path="reviews" element={<ReviewContainer />} />
-        <Route path="/signup" element={<Navigate to="/users"/>} />
-        <Route path="/login" element={<Navigate to="/users"/>} />
-        <Route path="/newreview" element={<ReviewForm/>} />
+        <Route path="login" element={<Login />} />
+        <Route path="newreview" element={<ReviewForm/>} />
       </Routes>
     </div>
   );
