@@ -1,8 +1,8 @@
 function Review({ review }){
     return(
-        <div class='row'>
-            <div class="col-sm-4">
-                <div class="card border-success">      
+        <div className='row'>
+            <div className="col-sm-4">
+                <div className="card border-success">      
                     <div className="m-5">
                         <h1 style={{fontSize: "30px"}}><u>{review.title}</u></h1>
                         <h2 style={{fontSize: "25px"}}>Rating: {review.rating}</h2>
