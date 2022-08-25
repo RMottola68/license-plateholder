@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 
 function ReviewContainer({ }) {
 
-    const [reviews, setReviews] = useState([]);
+    
 
     function fetchReviews()  {
       fetch("/reviews")
