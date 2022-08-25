@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
+import RMRLogo from './assets/RMRLogo.png'
 import { Link } from "react-router-dom";
 
 import { Container, Row, Col, Form, Button, Navbar} from 'react-bootstrap';
@@ -47,13 +48,14 @@ function Navigation({ user, setUser }) {
                 onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                 >
                     <Col>
-                        <Nav.Item className="p-3 justify-content-left">
-                            {/* <img src={} style={{width:140, height: 'auto'}} /> */}
+                        <Nav.Item className="p-0 justify-content-left">
+                            <img src={RMRLogo} style={{width:200, height: 'auto'}} />
                         </Nav.Item>
                     </Col>
 
-                    <Col className="ms-auto align-items-center" style={{color:"white"}}>
+                    <Col className="mt-1 align-items-center" style={{color:"white"}}>
                         <Nav.Item className="">
+
                             <h2 className="pt-5 d-flex justify-content-center">License Plateholder</h2>
                             <div className="d-flex justify-content-center">
 
@@ -70,17 +72,21 @@ function Navigation({ user, setUser }) {
                                 </Button>
 
 
-                                <Button className="m-3 btn-success" >
-                                    <Link  className="text-decoration-none  text-white" to="/newreview">Create new review</Link>
-                                </Button>
 
-
-                                <button onClick={handleLogoutClick}>Logout</button>
-
-                            </div>
+                              <Button className="m-3 btn-success" >
+                                  <Link  className="text-decoration-none  text-white" to="/newreview">Create new review</Link>
+                              </Button>
+                          </div>
                         </Nav.Item>
                     </Col>
-                    <Col></Col>
+                    
+                    <Col className='my-1 '>
+                      <Nav.Item className="d-flex justify-content-end">
+                        <img src={user.image} style={{width: 'auto', height: 125, borderRadius: "30px"}}></img>
+                        <Button className="btn-success my-5 mx-1" onClick={handleLogoutClick}>Logout</Button>
+                        <Button className="btn-success my-5" onClick={console.log('clicked')}>My Profile</Button>
+                      </Nav.Item>
+                    </Col>
                     
                 </Nav>
                 <Button style={{display: visible ? 'inline' : 'none', position:"fixed",background:"rgb(50,50,50)",width:"fit-content",height:"fit-content",left:"90%",bottom:"40px",fontSize:"10px",zIndex:"99",cursor:"pointer", color:"red",border:"red"}}>
