@@ -4,8 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
-  Link, 
-  ReviewForm
+  Link
 } from 'react-router-dom';
 import Navigation from "./Navigation";
 import UserContainer from "./UserContainer"
@@ -13,6 +12,8 @@ import './App.css';
 import ReviewContainer from "./ReviewContainer";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import ReviewForm from "./ReviewForm";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,6 +38,7 @@ if(!user) return <Login setUser={setUser} />
         <Route path="reviews" element={<ReviewContainer />} />
         <Route path="/signup" element={<SignUp setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/newreview" element={<ReviewForm/>} />
       </Routes>
     </div>
   );
