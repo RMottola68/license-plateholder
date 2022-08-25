@@ -4,6 +4,8 @@ import {useLocation, useNavigate} from "react-router"
 function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loginUser, setloginUser] = useState("");
+  const [loginPass, setloginPass] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [plate, setPlate] = useState("");
   const [state, setState] = useState("");
@@ -17,7 +19,7 @@ function Login({ setUser }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password}),
+      body: JSON.stringify({ username: loginUser, password: loginPass}),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
@@ -114,16 +116,16 @@ function Login({ setUser }) {
           type="text"
           id="username"
           autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={loginUser}
+          onChange={(e) => setloginUser(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={loginPass}
+          onChange={(e) => setloginPass(e.target.value)}
         />
         <button type="submit" >Login</button>
       </form>
