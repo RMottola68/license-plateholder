@@ -10,7 +10,7 @@ function ReviewForm({setReviews}){
     function handleSubmit(event){
         event.preventDefault()
         event.target.reset()
-        setPlants(reviews=>[...reviews,values])
+        setReviews(reviews=>[...reviews,values])
         fetch('http://localhost:9292/reviews',{
         method: 'POST',
         headers: {

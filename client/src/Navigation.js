@@ -64,13 +64,11 @@ function Navigation({ user, setUser }) {
                                     <Link  className="text-decoration-none  text-white" to="/reviews">Review a Plate</Link>
                                 </Button>
 
-                                <Button className="m-3 btn-success" >
-                                    <Link  className="text-decoration-none  text-white" to="/signup">Signup</Link>
-                                </Button>
 
                                 <Button className="m-3 btn-success" >
-                                    <Link  className="text-decoration-none  text-white" to="/login">Login</Link>
+                                    <Link  className="text-decoration-none  text-white" to="/newreview">Create new review</Link>
                                 </Button>
+
 
                                 <button onClick={handleLogoutClick}>Logout</button>
 
