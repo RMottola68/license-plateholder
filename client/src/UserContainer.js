@@ -11,7 +11,7 @@ function UserContainer({ }) {
     useEffect(()=>{
         fetch('/users')
           .then(res=>res.json())
-          .then(data => setUsers(data))
+          .then(data => console.log(data))
       },[])
     // console.log(order);
 
