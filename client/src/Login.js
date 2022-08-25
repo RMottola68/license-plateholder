@@ -5,6 +5,9 @@ function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [plate, setPlate] = useState("");
+  const [state, setState] = useState("");
+  const [image, setImage] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   function handleSubmit2(e) {
@@ -14,7 +17,7 @@ function Login({ setUser }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password}),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
@@ -36,6 +39,9 @@ function Login({ setUser }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
+        plate, 
+        state, 
+        image 
       }),
     }).then((r) => {
       if (r.ok) {
@@ -72,8 +78,34 @@ function Login({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
+        <label htmlFor="plate">Add Your Plate</label>
+        <input 
+        type="text"
+        id="plate"
+        value={plate}
+        onChange={(e) => setPlate(e.target.value)}
+        autoComplete="off"
+        />
+        <label htmlFor="state">What State are you From?</label>
+        <input 
+        type="text"
+        id="state"
+        value={state}
+        onChange={(e) => setState(e.target.value)}
+        autoComplete="off"
+        />
+        <label htmlFor="image">Show Us Your Car!</label>
+        <input 
+        type="text"
+        id="state"
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+        autoComplete="off"
+        />
         <button type="submit" >Sign Up</button>
       </form>
+
+
 
       <form onSubmit={handleSubmit2}>
         <h1>Login</h1>

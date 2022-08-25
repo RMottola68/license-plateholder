@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 2022_08_23_203728) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "image"
+    t.string "plate"
+    t.string "state"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
