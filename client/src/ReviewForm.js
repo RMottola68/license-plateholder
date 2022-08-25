@@ -3,7 +3,6 @@ function ReviewForm({setReviews}){
     const [values, setValues] = useState({
         title:"",
         content:"",
-        rating:"",
         user_id: ""
     })
 
@@ -11,7 +10,7 @@ function ReviewForm({setReviews}){
         event.preventDefault()
         event.target.reset()
         setReviews(reviews=>[...reviews,values])
-        fetch('http://localhost:9292/reviews',{
+        fetch('/reviews',{
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',

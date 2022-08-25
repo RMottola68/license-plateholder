@@ -28,6 +28,22 @@ function App() {
     });
   }, []);
 
+  const [reviews, setReviews]=useState([])
+
+
+  useEffect(()=>{
+    fetch('/reviews')
+      .then(res=>res.json())
+      .then(reviewsData => setReviews(reviewsData))
+  },[])
+  
+  
+  function handleUpdateReviews(updatedReview){
+    const updateReview = reviews.map((review)=> review.id === reviews.id ? updatedReview : review);
+    setReviews(updateReview)
+  }
+
+
 if(!user) return <Login setUser={setUser} />
 console.log(user)
   return (
@@ -36,9 +52,9 @@ console.log(user)
       <Routes>
         <Route path="*" element={<Navigate to="/login" replace/>} />
         <Route path="users" element={<UserContainer />} />
-        <Route path="reviews" element={<ReviewContainer />} />
+        <Route path="reviews" element={<ReviewContainer reviews={reviews} setReviews={setReviews}/>} />
         <Route path="login" element={<Login />} />
-        <Route path="newreview" element={<ReviewForm/>} />
+        <Route path="newreview" element={<ReviewForm setReviews={setReviews}/>} />
         <Route path="profile" element={<Profile user={user}/>} />
       </Routes>
     </div>
