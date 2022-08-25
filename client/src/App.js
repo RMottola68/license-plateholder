@@ -36,8 +36,8 @@ if(!user) return <Login setUser={setUser} />
         <Route path="*" element={<Navigate to="/login" replace/>} />
         <Route path="users" element={<UserContainer />} />
         <Route path="reviews" element={<ReviewContainer />} />
-        <Route path="/signup" element={<SignUp setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/signup" element={<Navigate to="/users"/>} />
+        <Route path="/login" element={<Navigate to="/users"/>} />
         <Route path="/newreview" element={<ReviewForm/>} />
       </Routes>
     </div>

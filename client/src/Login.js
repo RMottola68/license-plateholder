@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import {useLocation, useNavigate} from "react-router"
 
 function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
   function handleSubmit2(e) {
     e.preventDefault();
     fetch("/login", {
@@ -69,7 +72,7 @@ function Login({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" >Sign Up</button>
       </form>
 
       <form onSubmit={handleSubmit2}>
@@ -90,7 +93,7 @@ function Login({ setUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit" >Login</button>
       </form>
     </div>
   );
