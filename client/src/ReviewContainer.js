@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Review from "./Review";
 import { Container, Row } from 'react-bootstrap';
 
-function ReviewContainer({ }) {
+function ReviewContainer({ reviews, setReviews }) {
 
     
 
