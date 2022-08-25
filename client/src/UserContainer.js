@@ -46,9 +46,9 @@ return(
                     {search.map((user) => {
                         return( 
                         
-                            <Col  xs={3} className="text-dark " key={user.id}>
+                            <Col  xs={3} className="text-dark d-flex justify-content-center" key={user.id}>
 
-                                <User className="m-5 align-items-center" user={user} key={user.id} />
+                                <User className="m-5 " user={user} key={user.id} />
                                 
                             </Col>
                         )
