@@ -13,6 +13,7 @@ import ReviewContainer from "./ReviewContainer";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import ReviewForm from "./ReviewForm";
+import Profile from "./Profile";
 
 
 function App() {
@@ -38,6 +39,7 @@ console.log(user)
         <Route path="reviews" element={<ReviewContainer />} />
         <Route path="login" element={<Login />} />
         <Route path="newreview" element={<ReviewForm/>} />
+        <Route path="profile" element={<Profile user={user}/>} />
       </Routes>
     </div>
   );
