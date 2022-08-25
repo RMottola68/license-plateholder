@@ -6,7 +6,15 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, Button, Navbar} from 'react-bootstrap';
 
 
-function Navigation() {
+function Navigation({ user, setUser }) {
+
+    function handleLogoutClick() {
+        fetch("/logout", { method: "DELETE" }).then((r) => {
+          if (r.ok) {
+            setUser(null);
+          }
+        });
+      }
 
 
     const [visible, setVisible] = useState(false)
@@ -63,6 +71,8 @@ function Navigation() {
                                 <Button className="m-3 btn-success" >
                                     <Link  className="text-decoration-none  text-white" to="/login">Login</Link>
                                 </Button>
+
+                                <button onClick={handleLogoutClick}>Logout</button>
 
                             </div>
                         </Nav.Item>
