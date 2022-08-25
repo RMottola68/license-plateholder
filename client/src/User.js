@@ -1,7 +1,6 @@
 function User({ user }){
     return(
-        <div class='row'>
-            <div class="col-sm-4">
+       
                 <div class="card border-success">
                     <div className="m-5">
                         <div style={{fontSize: "25px"}}>Plate #: {user.plate}</div>
@@ -12,8 +11,7 @@ function User({ user }){
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+     
        
     )
 }
