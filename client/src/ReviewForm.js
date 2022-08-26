@@ -24,6 +24,7 @@ function ReviewForm({setReviews}){
              return data.json();
             }).then(update => {
             console.log(update);
+            
             }).catch(e => {
             console.log(e);
             })}
@@ -33,12 +34,12 @@ function ReviewForm({setReviews}){
     
     
     const handleTitle = (event) => {
-        setValues({...values, name: event.target.value})
+        setValues({...values, title: event.target.value})
     }
     
     
     const handleContent = (event) => {
-        setValues({...values, description:event.target.value})
+        setValues({...values, content:event.target.value})
     }
     const handleUserId = (event) => {
         setValues({...values, user_id:event.target.value})
