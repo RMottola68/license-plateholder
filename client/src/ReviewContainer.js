@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Review from "./Review";
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function ReviewContainer({ reviews, setReviews }) {
 
@@ -17,21 +17,27 @@ function ReviewContainer({ reviews, setReviews }) {
     // console.log(order);
 
     const renderReviews = reviews.map((review) => {
+
         return(
-            <Review className="m-5" review={review} key={review.id} />
+            <Col xs={3} className="text-dark  justify-content-center" key={review.id}>
+                <Review className="" review={review}  />
+            </Col>
         ) 
         
     })
 
 return(
-    <div className="bg-light border border-5 border-dark justify-contents-center" style={{marginTop: "174px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px"}}>
-        <Container>
-            <Row>
-                {renderReviews}
-            </Row>
-        </Container>
+    <Container className="bg-light border border-5 border-danger justify-contents-center" style={{marginTop: "150px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px", height: "100vh"}}>
         
-    </div>
+        
+        <h1 className="text-center ">Reviews</h1>
+        
+        
+        <Row className="mt-3">
+       
+            {renderReviews}
+        </Row>
+    </Container>
 )
 }
 
