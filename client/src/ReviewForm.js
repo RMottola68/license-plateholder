@@ -1,5 +1,5 @@
 import {useState} from "react"
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 function ReviewForm({setReviews}){
     const [values, setValues] = useState({
         title:"",
@@ -48,45 +48,47 @@ function ReviewForm({setReviews}){
     
 
     return(
-        <Row style={{height: "100vh", width: "100vw"}}>
-            <Col></Col>
-            <Col className="bg-light border border-5 border-danger justify-contents-center" style={{borderRadius: "30px"}}>
-                <div className="form-container">
-                    <header className="reviewsHeader">Leave Review</header>
-                    
-                    <form className="reviews-form" onSubmit={handleSubmit}>
-                    <div className="titleBox"> <input
-                            onChange={handleTitle}
-                            value={values.title}
-                            className="form-field"
-                            placeholder="Title"
-                            name="reviewTitle" />
-                        </div>
+        <Container style={{marginTop: "150px", height: "100vh", width: "100vw"}}>
+            <Row>
+                <Col></Col>
+                <Col className=" bg-light border border-5 border-danger justify-contents-center " style={{marginTop: "150px", borderRadius: "30px"}}>
+                    <div className="form-container text-center" >
+                        <label className="reviewsHeader "><h1>Leave Review</h1></label>
                         
-                        <div className="contentBox">
-                        <input 
-                            onChange={handleContent}
-                            value={values.content}
-                            className="form-field"
-                            placeholder="Content"
-                            name="reviewContent"/>
-                        </div>
-                        <div>
-                        <input 
-                            onChange={handleUserId}
-                            value={values.user_id}
-                            className="user_id"
-                            placeholder="user_id"
-                            name="reviewUser_id"/>
-                        </div>
+                        <form className="reviews-form" onSubmit={handleSubmit} style={{margin:"30px", borderRadius: "30px"}}>
+                        <div className="titleBox"> <input
+                                onChange={handleTitle}
+                                value={values.title}
+                                className="form-field"
+                                placeholder="Title"
+                                name="reviewTitle" />
+                            </div>
+                            
+                            <div className="contentBox">
+                            <input 
+                                onChange={handleContent}
+                                value={values.content}
+                                className="form-field"
+                                placeholder="Content"
+                                name="reviewContent"/>
+                            </div>
+                            <div>
+                            <input 
+                                onChange={handleUserId}
+                                value={values.user_id}
+                                className="user_id"
+                                placeholder="user_id"
+                                name="reviewUser_id"/>
+                            </div>
+                            
+                            <input className="submit" type="submit"/>
+                        </form>
                         
-                        <input className="submit" type="submit"/>
-                    </form>
-                    
-                </div>
-            </Col>    
-            <Col></Col>        
-        </Row>
+                    </div>
+                </Col>    
+                <Col></Col>        
+            </Row>
+        </Container>
     )
     
 
