@@ -71,7 +71,7 @@ function Navigation({ user, setUser }) {
                             </Button>
                         
                             <Button className="mx-1 btn-success" >
-                                <Link  className="text-decoration-none  text-white" to="reviews">Review a Plate</Link>
+                                <Link  className="text-decoration-none  text-white" to="reviews">Plate Reviews</Link>
                             </Button>
 
 

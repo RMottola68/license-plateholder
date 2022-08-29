@@ -32,7 +32,7 @@ function ReviewForm({setReviews, reviews}){
         })
     }
     
-    
+    console.log(values)
     
     
     
