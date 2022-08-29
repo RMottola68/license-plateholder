@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     def index
-        reviews= Review.all
+        reviews = Review.all
         render json: reviews
     end
 

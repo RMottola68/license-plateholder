@@ -9,9 +9,9 @@ function Profile({user}){
                     <h1>Driver Name: {user.username}</h1>
                     <h2>Plate Number: {user.plate}</h2>
                     <div className="reviewContainer">
-                    <h3>{user.reviews[0].title}</h3>
-                    <h3>{user.reviews[0].content}</h3>
-                    <h3>User Rating: {user.reviews[0].rating}</h3>
+                    {user.reviews[0].title ? <h3>{user.reviews[0].title}</h3> : <></>}
+                    {user.reviews[0].content ? <h3>{user.reviews[0].content}</h3> : <></>}
+                    {user.reviews[0].rating ? <h3>User Rating: {user.reviews[0].rating}</h3> : <></>}
                     <h3>User ID Number: {user.id}</h3>
                     </div>
                 </div>

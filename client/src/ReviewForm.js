@@ -1,6 +1,6 @@
 import {useState} from "react"
 import { Container, Row, Col } from "react-bootstrap";
-function ReviewForm({setReviews}){
+function ReviewForm({setReviews, reviews}){
     const [values, setValues] = useState({
         title:"",
         content:"",
@@ -9,6 +9,7 @@ function ReviewForm({setReviews}){
 
     function handleSubmit(event){
         event.preventDefault()
+        console.log(values)
         event.target.reset()
         setReviews(reviews=>[...reviews,values])
         fetch('/reviews',{
@@ -28,7 +29,8 @@ function ReviewForm({setReviews}){
             
             }).catch(e => {
             console.log(e);
-            })}
+        })
+    }
     
     
     

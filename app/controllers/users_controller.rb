@@ -15,6 +15,15 @@ class UsersController < ApplicationController
     end
 
     def show
+      user = User.find_by(id: params[:id])
+      if user
+        render json: user, serializer: UserSerializer
+      else
+        render json: { error: "Not authorized" }, status: :unauthorized
+      end
+    end
+
+    def show_me
       user = User.find_by(id: session[:user_id])
       if user
         render json: user, serializer: UserSerializer
@@ -22,10 +31,30 @@ class UsersController < ApplicationController
         render json: { error: "Not authorized" }, status: :unauthorized
       end
     end
+
+    def update
+      user = User.find_by(id: params[:id])
+      if user
+        user.update(user_params)
+        render json: user
+      else
+        render json: { error: "User not found" }, status: :not_found
+      end
+    end
+
+    def update_likes
+      user = User.find_by(id: params[:id])
+      if user
+        user.update(likes: user.likes + 1)
+        render json: user
+      else
+        render json: { error: "User not found" }, status: :not_found
+      end
+    end
   
     private
   
     def user_params
-      params.permit(:username, :password, :password_confirmation, :plate, :state, :image)
+      params.permit(:username, :password, :password_confirmation, :plate, :state, :image, :likes)
     end
   end

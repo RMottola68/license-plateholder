@@ -43,7 +43,8 @@ function Login({ setUser }) {
         password_confirmation: passwordConfirmation,
         plate, 
         state, 
-        image 
+        image,
+        likes: 0 
       }),
     }).then((r) => {
       if (r.ok) {

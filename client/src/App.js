@@ -54,7 +54,6 @@ function App() {
 
 
 if(!user) return <Login setUser={setUser} />
-console.log(user)
   return (
     <div className="App p-0" style={sectionStyle}>
       <Navigation user={user} setUser={setUser} />
@@ -63,7 +62,7 @@ console.log(user)
         <Route path="users" element={<UserContainer />} />
         <Route path="reviews" element={<ReviewContainer reviews={reviews} setReviews={setReviews}/>} />
         <Route path="login" element={<Login />} />
-        <Route path="newreview" element={<ReviewForm setReviews={setReviews} />} />
+        <Route path="newreview" element={<ReviewForm reviews={reviews} setReviews={setReviews} />} />
         <Route path="profile" element={<Profile user={user}/>} />
       </Routes>
     </div>
