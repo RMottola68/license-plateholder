@@ -52,7 +52,7 @@ function App() {
     setReviews(updateReview)
   }
 
-
+console.log(user)
 if(!user) return <Login setUser={setUser} />
   return (
     <div className="App p-0" style={sectionStyle}>
@@ -68,5 +68,6 @@ if(!user) return <Login setUser={setUser} />
     </div>
   );
 }
+
 
 export default App;
