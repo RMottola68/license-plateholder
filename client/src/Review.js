@@ -2,7 +2,7 @@ function Review({ review }){
     return(
         
         
-        <div className="card border-success">      
+        <div className="bg-danger card border border-5 border-success">      
             <div className="m-5">
                 <h1 style={{fontSize: "30px"}}><u>{review.title}</u></h1>
                 <h2 style={{fontSize: "25px"}}>Rating: {review.rating}</h2>

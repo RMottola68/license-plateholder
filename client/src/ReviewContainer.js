@@ -19,15 +19,15 @@ function ReviewContainer({ reviews, setReviews }) {
     const renderReviews = reviews.map((review) => {
 
         return(
-            <Col xs={3} className="text-dark  justify-content-center" key={review.id}>
-                <Review className="" review={review}  />
+            <Col xs={3} className="text-dark justify-content-center" key={review.id}>
+                <Review className="bg" review={review}  />
             </Col>
         ) 
         
     })
 
 return(
-    <Container className="bg-light border border-5 border-danger justify-contents-center" style={{marginTop: "150px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px", height: "100vh"}}>
+    <Container className="bg-muted border border-5 border-danger justify-contents-center" style={{marginTop: "150px", marginRight: "220px", marginLeft: "220px", borderRadius: "30px", height: "100vh"}}>
         
         
         <h1 className="text-center ">Reviews</h1>

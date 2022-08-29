@@ -35,8 +35,8 @@ function UserContainer({ }) {
    
 
 return(
-    
-    <Row  className="bg-light border border-5 border-danger justify-contents-center" style={{marginTop: "150px", marginRight: "175px", marginLeft: "175px", borderRadius: "30px"}}>
+    <Container className="text-center" style={{marginTop: "150px", borderRadius: "30px"}}>
+    <Row  className="bg-muted border border-5 border-danger justify-contents-center" style={{borderRadius: "30px", marginRight: "auto", marginLeft: "auto"}}>
         <Row className="my-2 text-center">
             <div>
                 <input type="text" placeholder="Search Plates" className="search" value={userSearch} onChange={(event) => setUserSearch(prevState => prevState = event.target.value)} />
@@ -56,6 +56,7 @@ return(
                         
             
     </Row>
+    </Container>
    
 )
 }

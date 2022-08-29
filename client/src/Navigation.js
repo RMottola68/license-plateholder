@@ -85,9 +85,13 @@ function Navigation({ user, setUser }) {
                     
                     <Col className='my-1 '>
                       <Nav.Item className="d-flex justify-content-end">
-                        <img src={user.image} style={{width: 'auto', height: 125, borderRadius: "30px"}}></img>
+                        <Link  className="text-decoration-none  text-white" to="profile">
+                          <img src={user.image} style={{width: 'auto', height: 125, borderRadius: "30px"}}></img>
+                        </Link>
                         <Button className="btn-success my-5 mx-1" onClick={handleLogoutClick}>Logout</Button>
-                        <Button className="btn-success my-5" onClick={console.log('clicked')}>My Profile</Button>
+                        <Button className="btn-success my-5" onClick={console.log('clicked')}>
+                        <Link  className="text-decoration-none  text-white" to="profile">My Profile</Link>
+                          </Button>
                       </Nav.Item>
                     </Col>
                     

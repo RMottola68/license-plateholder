@@ -53,7 +53,7 @@ function ReviewForm({setReviews}){
                 <Col></Col>
                 <Col className=" bg-light border border-5 border-danger justify-contents-center " style={{marginTop: "150px", borderRadius: "30px"}}>
                     <div className="form-container text-center" >
-                        <label className="reviewsHeader "><h1>Leave Review</h1></label>
+                        <label className="reviewsHeader "><h1>Leave a Review</h1></label>
                         
                         <form className="reviews-form" onSubmit={handleSubmit} style={{margin:"30px", borderRadius: "30px"}}>
                         <div className="titleBox"> <input
